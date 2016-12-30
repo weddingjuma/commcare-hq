@@ -659,4 +659,18 @@ ko.bindingHandlers.initializeValue = {
     },
 };
 
+ko.bindingHandlers.bind_element = {
+    init: function(element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+        var field = valueAccessor() || '$e';
+        if (viewModel[field]) {
+            console.log('warning: element already bound');
+            return;
+        }
+        viewModel[field] = element;
+        if (viewModel.onBind) {
+            viewModel.onBind(bindingContext);
+        }
+    }
+};
+
 });
