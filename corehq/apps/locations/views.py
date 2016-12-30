@@ -245,6 +245,7 @@ class LocationTypesView(BaseLocationView):
     @use_jquery_ui
     @method_decorator(check_pending_locations_import())
     def dispatch(self, request, *args, **kwargs):
+        request.use_requirejs = True
         return super(LocationTypesView, self).dispatch(request, *args, **kwargs)
 
     @property

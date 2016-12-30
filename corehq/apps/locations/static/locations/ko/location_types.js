@@ -1,6 +1,5 @@
-/* globals _, ko, $ */
-
-hqDefine('locations/ko/location_types.js', function(){
+/* global hqDefine */
+hqDefine('locations/ko/location_types.js', ['jquery', 'knockout', 'underscore'], function($, ko, _){
     'use strict';
     var ROOT_LOCATION_ID = -1;
 
